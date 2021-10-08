@@ -1,0 +1,93 @@
+<!--pages/playGame/playGame.wxml-->
+<view>
+<view class="getReady"wx:if="{{!userState}}">
+  <button class="button2" bindtap="getReady" >准备</button>
+</view>
+<view class="getReady"wx:else>
+  <button class="button2"  bindtap="getReady" >取消准备</button>
+</view>
+</view>
+
+<!-- <view class="rollDice">
+  <button class="dice" type="primary" bindtap="rollDice" >摇骰子</button>
+</view> -->
+
+
+
+<!-- 
+<view class="userList">
+  <button class="list" type="primary" bindtap="userList" >成员列表</button>
+</view> -->
+
+<!-- <view class="awardList">
+  <button class="award" type="primary" bindtap="" >查看奖品</button>
+</view> -->
+
+<!-- <view class="awardList">
+  <button class="award" type="primary" bindtap="awardList" >查看榜单</button>
+</view> -->
+
+
+
+<view class="wrap">
+
+<!---------------------------------------------------------------------------------1  -->
+<!--页面内容区  -->
+<view class="conts">
+
+<!-- 显示背景 -->
+<view class="bg" >
+<image class="bg-image" mode="scaleToFill"></image>
+</view>
+
+<!-- 成员列表按钮 -->
+<view>
+<button class="button" bindtap='userList' >成员列表</button>
+</view>
+
+<!-- 查看榜单按钮 -->
+<view>
+<button class="button" bindtap='awardList' >查看榜单</button>
+</view>
+
+<!-- 查看奖品按钮 -->
+<view>
+<button class="button" catchtap="clickPrize" >查看奖品</button>
+<view class="shade"  hidden="{{showPrize}}"></view>
+<view class="cont" hidden="{{showPrize}}">
+  <image src="/picture/prize.jpg"></image>
+  <button class="btn" hidden="{{showPrize}}" bindtap='closePrize'>关闭</button>
+</view>
+</view>
+
+<!-- 查看规则按钮 -->
+<view>
+<button class="button" catchtap="clickRule" >查看规则</button>
+<view class="shade"  hidden="{{showRule}}"></view>
+<view class="cont" hidden="{{showRule}}">
+  <image src="/picture/rule.jpg"></image>
+  <button class="btn" hidden="{{showRule}}" bindtap='closeRule'>关闭</button>
+</view>
+</view>
+
+<!-- 显示那个碗 -->
+<view class='imagesize'>
+<image src="/picture/port.jpg" class='in-image'   ></image>
+</view>
+
+<!-- 博饼区域 -->
+<button class="button1" type="red" catchtap="click">开始博饼</button>
+</view>
+<view class="shade"  hidden="{{showsRollDice}}"></view>
+<view class="cont" hidden="{{showsRollDice}}">
+    <image src="/picture/playDice.gif"></image>
+    <button class="btn" hidden="{{showsRollDice}}" bindtap='close' bindtap='clickResult'>停止</button>
+</view>
+
+<!-- 结果输出 -->
+</view>
+<view class="shade"  hidden="{{showResult}}"></view>
+<view class="cont" hidden="{{showResult}}">
+    <view class="text">{{result}}</view>
+    <button class="btn" hidden="{{showResult}}"bindtap="closeResult">确定</button>
+</view>

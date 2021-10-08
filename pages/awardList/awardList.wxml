@@ -1,0 +1,11 @@
+<!--pages/userList/userList.wxml-->
+<view class="user_box">
+<block wx:for="{{userList1}}" wx:key="index">
+  <view class="user_tabs1">
+    <image class="headImg" data-info="{{item}}" bindtap="toUser" src="{{item.info.avatarUrl}}"></image>
+    <view class="name">{{item.info.nickName}}</view>
+    <view class="name">{{item.temp}}</view>
+  </view>
+</block>
+</view>
+

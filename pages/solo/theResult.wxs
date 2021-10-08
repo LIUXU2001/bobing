@@ -1,0 +1,68 @@
+var getresult=function(){
+  var result="没中奖"
+//存储每个点数的个数
+var num1=0
+    num2=0
+    num3=0
+    num4=0
+    num5=0
+    num6=0
+
+//  存储当前随机数组
+var NumberArr = [];
+ 
+//  生成随机数据
+var a = Math.floor(Math.random() * 6) + 1,
+    b = Math.floor(Math.random() * 6) + 1,
+    c = Math.floor(Math.random() * 6) + 1,
+    d = Math.floor(Math.random() * 6) + 1,
+    e = Math.floor(Math.random() * 6) + 1,
+    f = Math.floor(Math.random() * 6) + 1;
+
+// 数据进入数组，排序
+NumberArr.push(a, b, c, d, e, f);
+NumberArr.sort();
+
+//统计点数个数
+for (var i = 0; i < NumberArr.length; i++){
+  if (NumberArr[i] == 1)num1++;
+  else if(NumberArr[i] == 2)num2++;
+  else if(NumberArr[i] == 3)num3++;
+  else if(NumberArr[i] == 4)num4++;
+  else if(NumberArr[i] == 5)num5++;
+  else if(NumberArr[i] == 6)num6++;
+}
+
+if (num4==4&&num1==2) {
+result="状元插金花"
+}else if(num4==6){
+  result="六杯红"
+}else if(num1==6){
+result="遍地锦"
+}else if(num2==6||num3==6||num5==6||num6==6){
+result="六杯黑"
+}else if(num4==5){
+result="五王"
+}else if(num1==5||num2==5||num5==5||num6==5||num3==5){
+result="五子登科"
+}else if(num4==4){
+result="状元"
+}else if(num1==1&&num2==1&&num5==1&&num6==1&&num3==1&&num4==1){
+result="对堂"
+}else if(num4==3){
+result="三红"
+}else if(num1==4||num2==4||num5==4||num6==4||num3==4){
+result="四进"
+}else if(num4==2){
+result="二举"
+}else if(num4==1){
+result="一秀"
+}else{
+result='继续加油'
+}
+return result;
+  };
+
+module.exports = {
+       getresult:getresult
+ }

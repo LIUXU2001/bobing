@@ -1,0 +1,21 @@
+<!-- 显示背景 -->
+<view class="bg" >
+<image class="bg-image" mode="scaleToFill"></image>
+</view>
+
+
+<view class="userinfo">
+<button class="button2" bindtap="login" wx:if="{{!user}}">登录</button>
+<view class="user" wx:else>
+<image class="touxiang" src="{{user.avatarUrl}}"></image>
+<view class="name">{{user.nickName}}</view>
+</view>
+</view>
+
+<view class="playGame">
+  <button class="bobing"  bindtap="playGame" >多人博饼</button>
+</view>
+
+<view class="aboutUs">
+  <button class="bobing"  bindtap="aboutUs" >单人博饼</button>
+</view>
